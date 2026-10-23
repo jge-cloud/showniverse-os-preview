@@ -1454,7 +1454,7 @@ campaignList=()=>{
   let out=campaignBeforeCrevit();
   if(view.type!=='전체')return out;
   const rows=CrevitFeed.filter({q:view.q,filter:view.filter,person:view.person});
-  const section=`<section class="crevit-section"><div class="section-title"><div class="crevit-heading">${crevitIdentity()}<div><h2>크레빗 시딩 · ${rows.length}개</h2><span class="tiny muted">가상 예시 · ${crevitStamp()} · 자동 동기화 미연결</span></div></div>${btn('시딩 전체 보기','crevitOpen','','small')}</div>${rows.length?crevitCards(rows):'<p class="small muted">현재 업무·담당 조건에 해당하는 크레빗 예시 데이터이 없습니다. 시딩 전체 보기에서 5개를 확인할 수 있습니다.</p>'}</section><p class="tiny muted crevit-demo-label">아래는 OS 가상 업무 예시입니다. 위 크레빗 예시 데이터과 별도로 집계합니다.</p>`;
+  const section=`<section class="crevit-section"><div class="section-title"><div class="crevit-heading">${crevitIdentity()}<div><h2>크레빗 시딩 · ${rows.length}개</h2><span class="tiny muted">가상 예시 · ${crevitStamp()} · 자동 동기화 미연결</span></div></div>${btn('시딩 전체 보기','crevitOpen','','small')}</div>${rows.length?crevitCards(rows):'<p class="small muted">현재 업무·담당 조건에 해당하는 크레빗 예시 데이터이 없습니다. 시딩 전체 보기에서 5개를 확인할 수 있습니다.</p>'}</section><p class="tiny muted crevit-demo-label">아래는 PPL 가상 업무 예시입니다. 위 시딩 예시와 별도로 집계합니다.</p>`;
   const marker='> 종료 포함</label></div>';
   return out.replace(marker,marker+section);
 };
